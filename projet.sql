@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 4.6.6deb5
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le :  ven. 15 nov. 2019 à 17:11
--- Version du serveur :  10.4.8-MariaDB
--- Version de PHP :  7.3.10
+-- Client :  localhost:3306
+-- Généré le :  Jeu 21 Novembre 2019 à 10:22
+-- Version du serveur :  10.1.24-MariaDB-6
+-- Version de PHP :  7.0.22-3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `projet`
+-- Base de données :  `user`
 --
 
 -- --------------------------------------------------------
@@ -33,6 +31,24 @@ CREATE TABLE `activite` (
   `nomAccompagnateur` varchar(30) DEFAULT NULL,
   `duree` int(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Contenu de la table `activite`
+--
+
+INSERT INTO `activite` (`nom`, `nomAccompagnateur`, `duree`) VALUES
+('Accrobranche', 'Owen', 120),
+('Cours de musique', 'Camille', 120),
+('Escalade', 'Louise', 60),
+('Jet-Ski', 'Dylan', 75),
+('Parapente', 'Sofia', 150),
+('Parasailing', 'Lorenzo', 90),
+('Plongee', 'Maria', 120),
+('Rafting', 'William', 150),
+('Randonnee', 'Gabriel', 180),
+('Ski', 'Samuel', 210),
+('Surf', 'Tiago', 60),
+('Velo', 'Lucas', 120);
 
 -- --------------------------------------------------------
 
@@ -121,6 +137,53 @@ CREATE TABLE `ville` (
   `pays` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Contenu de la table `ville`
+--
+
+INSERT INTO `ville` (`nom`, `codePostal`, `pays`) VALUES
+('Agra', 'A223007', 'Inde'),
+('Amsterdam', 'AM-1109', 'Pays-Bas'),
+('Athène', 'A104-31', 'Grèce'),
+('Bangkok', '10270', 'Thailand'),
+('Berlin', '10115', 'Allemagne'),
+('Bobo-Dioulasso', 'DJ-2018', 'Burkina Faso'),
+('Braga', 'B4700-024', 'Portugal'),
+('Brighton', 'BN1', 'Royaume-Uni'),
+('Bruxelles', '1000', 'Belgique'),
+('Budapest', 'BU-1007', 'Hongrie'),
+('Cannes', '06400', 'France'),
+('Copenhague', '1052', 'Danemark'),
+('Cracovie', '04-218', 'Pologne'),
+('Dubai', 'B.P111', 'Émirats Arabes Unis'),
+('Hanoi', '1000-HO75', 'Vietnam'),
+('Hong Kong', '999077', 'Chine'),
+('Ispahan', 'I81465', 'Iran'),
+('Istanbul', '34010', 'Turquie'),
+('Leipzig', '04103', 'Allemagne'),
+('Lisbonne', 'L1000-001', 'Portugal'),
+('Londre', 'SW1A-1AA', 'Royaume-Uni'),
+('Lugano', 'L-6815', 'Suisse'),
+('Madrid', 'M28001', 'Espagne'),
+('Manille', 'ML1000', 'Philippines'),
+('Marseille', 'M13000', 'France'),
+('Namur', 'N-5000', 'Belgique'),
+('Nicosie', '1065', 'Chypre'),
+('Oulan Bator', 'OU14-B200', 'Mongolie'),
+('Palerme', 'P90100', 'Italie'),
+('Paris', '75000', 'France'),
+('Pékin', 'P100000I', 'Chine'),
+('Prague', '104-00', 'République tchèque'),
+('Rome', '00100', 'Italie'),
+('Séoul', '100-011', 'Corée du Sud'),
+('Sofia', '1138', 'Bulgarie'),
+('Taipei', 'TA100-491', 'Taiwan'),
+('Tokyo', '100-0000', 'Japon'),
+('Valence', 'V46001', 'Espagne'),
+('Venise', '30100', 'Italie'),
+('Vienne', '38200', 'Autriche'),
+('Zagreb', '1020', 'Croatie');
+
 -- --------------------------------------------------------
 
 --
@@ -133,11 +196,13 @@ CREATE TABLE `voyage` (
   `typeVoyage` varchar(30) NOT NULL,
   `correspondance` tinyint(1) NOT NULL,
   `nomVilleDepart` varchar(30) NOT NULL,
-  `nomVilleArrive` varchar(30) NOT NULL
+  `nomVilleArrive` varchar(30) NOT NULL,
+  `dateDepart` date DEFAULT NULL,
+  `dateArrive` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Index pour les tables déchargées
+-- Index pour les tables exportées
 --
 
 --
@@ -200,7 +265,7 @@ ALTER TABLE `voyage`
   ADD KEY `nomVilleArrive` (`nomVilleArrive`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT pour les tables exportées
 --
 
 --
@@ -208,21 +273,18 @@ ALTER TABLE `voyage`
 --
 ALTER TABLE `client`
   MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `paiement`
 --
 ALTER TABLE `paiement`
   MODIFY `n_transaction` int(5) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT pour la table `voyage`
 --
 ALTER TABLE `voyage`
   MODIFY `n_reservation` int(30) NOT NULL AUTO_INCREMENT;
-
 --
--- Contraintes pour les tables déchargées
+-- Contraintes pour les tables exportées
 --
 
 --
@@ -261,7 +323,6 @@ ALTER TABLE `paiement`
 ALTER TABLE `voyage`
   ADD CONSTRAINT `voyage_ibfk_1` FOREIGN KEY (`nomVilleDepart`) REFERENCES `ville` (`nom`),
   ADD CONSTRAINT `voyage_ibfk_2` FOREIGN KEY (`nomVilleArrive`) REFERENCES `ville` (`nom`);
-COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
