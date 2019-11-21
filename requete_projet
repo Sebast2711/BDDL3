@@ -1,0 +1,43 @@
+Requete SQL:
+
+TYPE VOYAGE: touristique, travail, 
+
+VOYAGE:
+
+1) SELECT nom, prenom, adresse, telephone, email, pseudo motdepasse FROM client 
+
+2) SELECT nom, nomAccompagnateur FROM activite WHERE duree = 60 (120, etc)
+
+3) SELECT * FROM voyage WHERE DateDepart = X AND DateArrivee = X 
+
+4) SELECT * FROM voyage WHERE typeTransport = avion OR typeTransport = bateau
+
+
+
+5) SELECT SUM(pix) FROM voyage, chambre, activite WHERE  AS
+
+
+CHAMBRE/HOTEL:
+
+6) SELECT  FROM reserverchambre, chambre WHERE nb_personne = nb_lits
+
+
+
+SELECT nom, nb_etoiles FROM hotel H, chambre C WHERE H.lieu = 'Paris' AND H.nom = C.hotel AND C.nb_lits > 2
+
+SELECT nom FROM hotel H, chambre C WHERE H.lieu = 'Paris' AND H.nom = C.hotel AND C.nb_lits > 2 AND H.nb_etoiles > 3
+
+
+
+ACTIVITE:
+
+7) SELECT A.nom FROM activite A, ville V WHERE a.ville = v.nom AND v.pays LIKE 'B%'
+
+
+CREATE view departle15 SELECT * FROM voyage WHERE Datedepart = 15/11/19
+
+CREATE view departdeparis SELECT * FROM voyage WHERE villeDepart = Paris 
+
+
+
+(si le typevoyage = travail alors pas le droit aux activite mais droit a lhotel)
