@@ -13,8 +13,20 @@ VOYAGE:
 4) SELECT * FROM voyage WHERE typeTransport = avion OR typeTransport = bateau
 
 
+// Ajout temporaire
+5) SELECT  C.nom, C.prenom, A.prix + V.prix + CH.prix AS montant
+FROM CLIENT C,
+    voyage V,
+    activite A,
+    chambre CH,
+    reservervoyage RV,
+    reserverchambre RC,
+    reserveractivite RA
+WHERE
+    C.id = RV.id AND V.n_reservation = RV.n_reservation AND C.id = RC.id AND CH.n_reservation = RC.n_reservation AND C.id = RA.id AND A.nom = RA.nomactivite
+GROUP BY C.nom, C.prenom, montant
 
-5) SELECT SUM(pix) FROM voyage, chambre, activite WHERE  AS
+
 
 
 CHAMBRE/HOTEL:
