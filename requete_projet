@@ -27,6 +27,10 @@ WHERE
 GROUP BY C.nom, C.prenom, montant
 
 
+//Pour les ajouter a la table paiement
+
+UPDATE paiement SET montant = (SELECT somme.montant FROM somme WHERE somme.id = paiement.id) WHERE id = 1 
+
 
 
 CHAMBRE/HOTEL:
