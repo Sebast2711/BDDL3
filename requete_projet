@@ -1,60 +1,51 @@
 Requete SQL:
 
-TYPE VOYAGE: touristique, travail, 
 
-VOYAGE:
 
-1) SELECT nom, prenom, adresse, telephone, email, pseudo motdepasse FROM client 
+1) SELECT * FROM client 
 
 2) SELECT nom, nomAccompagnateur FROM activite WHERE duree = 60 (120, etc)
 
-3) SELECT * FROM voyage WHERE DateDepart = X AND DateArrivee = X 
+
 
 4) SELECT * FROM voyage WHERE typeTransport = avion OR typeTransport = bateau
 
+5) SELECT nom FROM reserverchambre, chambre WHERE nb_personne = nb_lits
 
-// Ajout temporaire
+6) SELECT nom, nb_etoiles FROM hotel H, chambre C WHERE H.lieu = 'Paris' AND H.nom = C.hotel AND C.nb_lits > 2
+
+7) SELECT nom FROM hotel H, chambre C WHERE H.lieu = 'Paris' AND H.nom = C.hotel AND C.nb_lits > 2 AND H.nb_etoiles > 3
+
+8) SELECT A.nom FROM activite A, ville V WHERE a.ville = v.nom AND v.pays LIKE 'B%'
+
+9) 
+
+
+
+
+
+CREATE view departle15 SELECT * FROM voyage WHERE Datedepart = 15/11/19
+
+3) SELECT * FROM ville, departle15 WHERE  
+
+
+
+CREATE view departdeparis SELECT * FROM voyage WHERE villeDepart = Paris 
+
+
+
 
 CREATE VIEW somme AS SELECT  C.id , A.prix + V.prix + CH.prix AS montant
-FROM CLIENT C,
-    voyage V,
-    activite A,
-    chambre CH,
-    reservervoyage RV,
-    reserverchambre RC,
-    reserveractivite RA
-WHERE
-    C.id = RV.id AND V.n_reservation = RV.n_reservation AND C.id = RC.id AND CH.n_reservation = RC.n_reservation AND C.id = RA.id AND A.nom = RA.nomactivite
+
+FROM CLIENT C,    voyage V,    activite A,    chambre CH,    reservervoyage RV,     reserverchambre RC,    reserveractivite RA
+
+WHERE  C.id = RV.id AND V.n_reservation = RV.n_reservation 
+AND C.id = RC.id AND CH.n_reservation = RC.n_reservation 
+AND C.id = RA.id AND A.nom = RA.nomactivite
+
 GROUP BY C.id, montant
 
 
 //Pour les ajouter a la table paiement
 
 UPDATE paiement SET montant = (SELECT somme.montant FROM somme WHERE somme.id = paiement.id) WHERE id = 1 
-
-
-
-CHAMBRE/HOTEL:
-
-6) SELECT  FROM reserverchambre, chambre WHERE nb_personne = nb_lits
-
-
-
-SELECT nom, nb_etoiles FROM hotel H, chambre C WHERE H.lieu = 'Paris' AND H.nom = C.hotel AND C.nb_lits > 2
-
-SELECT nom FROM hotel H, chambre C WHERE H.lieu = 'Paris' AND H.nom = C.hotel AND C.nb_lits > 2 AND H.nb_etoiles > 3
-
-
-
-ACTIVITE:
-
-7) SELECT A.nom FROM activite A, ville V WHERE a.ville = v.nom AND v.pays LIKE 'B%'
-
-
-CREATE view departle15 SELECT * FROM voyage WHERE Datedepart = 15/11/19
-
-CREATE view departdeparis SELECT * FROM voyage WHERE villeDepart = Paris 
-
-
-
-(si le typevoyage = travail alors pas le droit aux activite mais droit a lhotel)
