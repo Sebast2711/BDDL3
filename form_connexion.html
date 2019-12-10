@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page de connexion</title>
+</head>
+<body>
+
+	<H1> Bienvenue sur la page de connexion</H1>
+	<p>Veuillez rentrez vos donnees personnelles</p>
+
+
+<form action="connexion.php" method="post">
+
+	<table border="1">
+	
+		<tr>
+			<td><label>Pseudo:</label></td>	
+			<td><input type="text" name="Pseudo" required /> </td>
+		</tr>	
+		<tr>
+			<td><label>Mot de passe:</label></td>	
+			<td><input type="password" name="MotDePasse" required /> </td>
+		</tr>	
+	
+	</table>
+				<input type="submit" name="Validation" value="Validez votre connexion" /> <br>
+				<input type="reset" name="Reset" value="Reinitialisez les donnees du formulaire" />
+</form>
+
+
+
+</body>
+</html>

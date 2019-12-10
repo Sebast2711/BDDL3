@@ -1,0 +1,41 @@
+nav ul {
+
+	padding: 0px;
+	margin: 0px;
+	list-style-type: none;
+	background-color: #333333; /* Couleur du bandeau */
+
+
+}
+
+nav li {
+	display: inline-block;
+	width:  150px;
+	height: 25px;
+	margin: 0px;
+	padding: 0px;
+	border-right: 1px solid black; /* Couleur des petites lignes entre chaque page */
+	text-align: center;
+	line-height: 25px;
+	font-weight: bold;
+}
+
+
+nav ul :hover {
+	background-color: lightblue; /* Couleur quand on passe la souris au dessus */
+
+}
+
+nav li a {
+	text-decoration: none;
+	color: white; /* Couleur des ancres */
+}
+
+nav li input {
+	background-color: lightblue; /* Couleur des boutons */
+	font-weight: bold;
+}
+
+body {
+	background-color:lightgreen; 
+}

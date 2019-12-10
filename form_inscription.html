@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+
+	<title>Page d'inscription</title>
+	<link rel="stylesheet" type="text/css" href="CSS/form_inscription.css">
+	<link rel="stylesheet" type="text/css" href="CSS/menu.css">
+</head>
+
+<body>
+
+<nav>
+      <ul>
+        <li><a href="index.html#Pageprincipale">Accueil</a></li>
+        <li><a href="#">Voyages</a></li>
+        <li><a href="#">Hotel</a></li>
+        <li><a href="#">Activite</a></li>
+      </ul>
+</nav>
+
+
+
+	<H1> Bienvenue sur la page d'inscription</H1>
+	<p>Veuillez rentrez vos donnees personnelles. <br>
+		Les champs avec une <em>*</em> sont des champs obligatoires, Merci de les remplir</p>
+
+
+
+<div class="formulaire">
+
+	<form action="inscription.php" method="post">
+
+		<table>
+		
+
+			<tr>
+				<td><label>Nom: <em>*</em> </label></td>
+				<td><input type="text" name="Nom" maxlength="30" placeholder="Dupond" required = "" autofocus="" tabindex="1"></td>
+
+				<td><label>Prenom: <em>*</em> </label></td>
+				<td><input type="text" name="Prenom" maxlength="30" placeholder="Olivier" required ="" tabindex="2"></td>
+			</tr>
+
+			<tr>
+				<td><label>Adresse: </label></td>
+				<td><input type="text" name="Adresse" maxlength="100"></td>
+			
+				<td><label>Num telephone: </label></td>
+				<td><input type="tel" name="Telephone" maxlength="10" placeholder="06xxxxxxxx"></td>
+
+				<td><label>Email: <em>*</em> </label></td>
+				<td><input type="email" name="Email" maxlength="100" placeholder = "DupondOlivier@gmail.com"required ></td>
+				
+			</tr>
+
+			<tr>
+
+				<td><label>Pseudo: <em>*</em></label></td>	
+				<td><input type="text" name="Pseudo" required /> </td>
+			
+				<td><label>Mot de passe: <em>*</em></label></td>	
+				<td><input type="password" name="MotDePasse" required /> </td>
+				
+				<td><label>Confirmez votre mot de passe: <em>*</em></label></td>	
+				<td><input type="password" name="ConfMotDePasse" required /> </td>
+			
+
+			</tr>	
+		
+		</table>
+					<label>Souhaitez vous devenir premium ?</label>
+					<input type="checkbox" name="Premium"><br>		
+					<input type="submit" name="Validation" value="Validez" /> 
+					<input type="reset" name="Reset" value="Annulez" />
+
+	</form>
+
+</div>
+
+
+
+
+</body>
+</html>
