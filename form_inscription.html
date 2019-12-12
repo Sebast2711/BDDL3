@@ -11,6 +11,8 @@
 
 <body>
 
+<a id = "page"> </a>
+
 <nav>
       <ul>
         <li><a href="index.html#Pageprincipale">Accueil</a></li>
@@ -45,33 +47,32 @@
 
 			<tr>
 				<td><label>Adresse: </label></td>
-				<td><input type="text" name="Adresse" maxlength="100"></td>
+				<td><input type="text" name="Adresse" maxlength="100" tabindex="3"></td>
 			
 				<td><label>Num telephone: </label></td>
-				<td><input type="tel" name="Telephone" maxlength="10" placeholder="06xxxxxxxx"></td>
+				<td><input type="tel" name="Telephone" maxlength="10" placeholder="06xxxxxxxx" tabindex="4"></td>
 
 				<td><label>Email: <em>*</em> </label></td>
-				<td><input type="email" name="Email" maxlength="100" placeholder = "DupondOlivier@gmail.com"required ></td>
+				<td><input type="email" name="Email" maxlength="100" placeholder = "DupondOlivier@gmail.com"required tabindex="5" ></td>
 				
 			</tr>
 
 			<tr>
 
 				<td><label>Pseudo: <em>*</em></label></td>	
-				<td><input type="text" name="Pseudo" required /> </td>
+				<td><input type="text" name="Pseudo" required tabindex="6" /> </td>
 			
 				<td><label>Mot de passe: <em>*</em></label></td>	
-				<td><input type="password" name="MotDePasse" required /> </td>
+				<td><input type="password" name="MotDePasse" required tabindex="7" /> </td>
 				
 				<td><label>Confirmez votre mot de passe: <em>*</em></label></td>	
-				<td><input type="password" name="ConfMotDePasse" required /> </td>
+				<td><input type="password" name="ConfMotDePasse" required tabindex="8" /> </td>
 			
-
 			</tr>	
 		
 		</table>
 					<label>Souhaitez vous devenir premium ?</label>
-					<input type="checkbox" name="Premium"><br>		
+					<input type="checkbox" name="prem" value="coche"><br>		
 					<input type="submit" name="Validation" value="Validez" /> 
 					<input type="reset" name="Reset" value="Annulez" />
 

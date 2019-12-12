@@ -2,16 +2,31 @@
 <html>
 <head>
 	<title>Page de connexion</title>
+	<link rel="stylesheet" type="text/css" href="CSS/menu.css">
 </head>
 <body>
+	
+<nav>
+      <ul>
+        <li><a href="index.html#Pageprincipale">Accueil</a></li>
+        <li><a href="#">Voyages</a></li>
+        <li><a href="#">Hotel</a></li>
+        <li><a href="#">Activite</a></li>
+      </ul>
+</nav>
+
+
 
 	<H1> Bienvenue sur la page de connexion</H1>
 	<p>Veuillez rentrez vos donnees personnelles</p>
 
 
+
+
+
 <form action="connexion.php" method="post">
 
-	<table border="1">
+	<table >
 	
 		<tr>
 			<td><label>Pseudo:</label></td>	
@@ -23,8 +38,8 @@
 		</tr>	
 	
 	</table>
-				<input type="submit" name="Validation" value="Validez votre connexion" /> <br>
-				<input type="reset" name="Reset" value="Reinitialisez les donnees du formulaire" />
+				<input type="submit" name="Validation" value="Validez" /> 
+				<input type="reset" name="Reset" value="Annulez" />
 </form>
 
 
