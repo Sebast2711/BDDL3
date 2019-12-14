@@ -1,41 +1,49 @@
-nav ul {
-
-	padding: 0px;
-	margin: 0px;
-	list-style-type: none;
-	background-color: #333333; /* Couleur du bandeau */
-
-
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+body{
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+}
+nav{
+  height: 80px;
+  width: 100%;
+ 
+}
+label.logo{
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+nav ul{
+  float: right;
+  margin-right: 20px;
+   
 }
 
-nav li {
-	display: inline-block;
-	width:  150px;
-	height: 25px;
-	margin: 0px;
-	padding: 0px;
-	border-right: 1px solid black; /* Couleur des petites lignes entre chaque page */
-	text-align: center;
-	line-height: 25px;
-	font-weight: bold;
+
+nav ul li{
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+  
 }
 
-
-nav ul :hover {
+nav ul li  :hover {
 	background-color: lightblue; /* Couleur quand on passe la souris au dessus */
-
 }
 
-nav li a {
-	text-decoration: none;
-	color: white; /* Couleur des ancres */
-}
+nav ul li a{
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  	border-right: 1px solid black; /* Couleur des petites lignes entre chaque page */
 
-nav li input {
-	background-color: lightblue; /* Couleur des boutons */
-	font-weight: bold;
-}
-
-body {
-	background-color:lightgreen; 
 }

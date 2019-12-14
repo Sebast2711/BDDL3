@@ -1,23 +1,126 @@
 em {
 	color: red;
 }
-
+h2{
+    text-align:center;
+}
+H1{
+    text-align:center;
+}
 .formulaire {
-	float: left;
-	width: auto;
-	height: auto;
-	margin-left: 20%;
-	border: 2px solid green;
+	max-width: 400px;
+    border-radius:20px;
+    margin:auto;
+    background:rgba(0,0,0,0.8);
+    box-sizing:border-box;
+    padding:40px;
+    color:#fff;
+    margin-top:100px;
+}
+
+input[type=text] {
+    width:100%;
+    box-sizing:border-box;
+    padding:12px 5px;
+    background:rgba(0,0,0,0.10);
+    outline:none;
+    border:none;
+    border-bottom:1px dotted #fff;
+    color:#fff;
+    border-radius:5px;
+    margin:5px;
+    font-weight:bold;
+}
+
+input[type=tel] {
+    width:100%;
+    box-sizing:border-box;
+    padding:12px 5px;
+    background:rgba(0,0,0,0.10);
+    outline:none;
+    border:none;
+    border-bottom:1px dotted #fff;
+    color:#fff;
+    border-radius:5px;
+    margin:5px;
+    font-weight:bold;
 }
 
 
-input {
-	padding:3px;
-	border:1px solid black;
-	border-radius:100px;
-	width:150px;
-	transition: width .5s;
+
+input[type=email] {
+    width:100%;
+    box-sizing:border-box;
+    padding:12px 5px;
+    background:rgba(0,0,0,0.10);
+    outline:none;
+    border:none;
+    border-bottom:1px dotted #fff;
+    color:#fff;
+    border-radius:5px;
+    margin:5px;
+    font-weight:bold;
 }
+
+
+input[type=password] {
+    width:100%;
+    box-sizing:border-box;
+    padding:12px 5px;
+    background:rgba(0,0,0,0.10);
+    outline:none;
+    border:none;
+    border-bottom:1px dotted #fff;
+    color:#fff;
+    border-radius:5px;
+    margin:5px;
+    font-weight:bold;
+}
+
+
+input[type=submit] {
+	width:100%;
+	box-sizing:border-box;
+	padding:10px 0;
+	margin-top:30px;
+	outline:none;
+	border:none;
+	background:#FF5733;
+	opacity:0.7;
+	border-radius:20px;
+	font-size:20px;
+	color:#fff;
+}
+
+
+input[type=reset] {
+	width:100%;
+	box-sizing:border-box;
+	padding:10px 0;
+	margin-top:30px;
+	outline:none;
+	border:none;
+	background:#FF5733;
+	opacity:0.7;
+	border-radius:20px;
+	font-size:20px;
+	color:#fff;
+}
+
+
+
+input[type=submit]:hover{
+	background:#60adde;
+	opacity:0,7;
+}
+
+
+input[type=reset]:hover{
+	background:#60adde;
+	opacity:0,7;
+	}
+
+
 
 input[type=email]:focus  {
 	 width: 400px;
@@ -27,4 +130,7 @@ input[type=email]:focus  {
 label {
 	color: blue;
 }
+body{
+background:#82e0aa;}
+
 

@@ -3,7 +3,7 @@
 
 
 <head>
-
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Page d'inscription</title>
 	<link rel="stylesheet" type="text/css" href="CSS/form_inscription.css">
 	<link rel="stylesheet" type="text/css" href="CSS/menu.css">
@@ -16,61 +16,30 @@
 <nav>
       <ul>
         <li><a href="index.html#Pageprincipale">Accueil</a></li>
-        <li><a href="#">Voyages</a></li>
-        <li><a href="#">Hotel</a></li>
-        <li><a href="#">Activite</a></li>
       </ul>
 </nav>
 
 
 
 	<H1> Bienvenue sur la page d'inscription</H1>
-	<p>Veuillez rentrez vos donnees personnelles. <br>
-		Les champs avec une <em>*</em> sont des champs obligatoires, Merci de les remplir</p>
-
-
-
+		
 <div class="formulaire">
+<h2>Inscription</h2>
 
 	<form action="inscription.php" method="post">
 
-		<table>
 		
 
-			<tr>
-				<td><label>Nom: <em>*</em> </label></td>
-				<td><input type="text" name="Nom" maxlength="30" placeholder="Dupond" required = "" autofocus="" tabindex="1"></td>
-
-				<td><label>Prenom: <em>*</em> </label></td>
-				<td><input type="text" name="Prenom" maxlength="30" placeholder="Olivier" required ="" tabindex="2"></td>
-			</tr>
-
-			<tr>
-				<td><label>Adresse: </label></td>
-				<td><input type="text" name="Adresse" maxlength="100" tabindex="3"></td>
-			
-				<td><label>Num telephone: </label></td>
-				<td><input type="tel" name="Telephone" maxlength="10" placeholder="06xxxxxxxx" tabindex="4"></td>
-
-				<td><label>Email: <em>*</em> </label></td>
-				<td><input type="email" name="Email" maxlength="100" placeholder = "DupondOlivier@gmail.com"required tabindex="5" ></td>
-				
-			</tr>
-
-			<tr>
-
-				<td><label>Pseudo: <em>*</em></label></td>	
-				<td><input type="text" name="Pseudo" required tabindex="6" /> </td>
-			
-				<td><label>Mot de passe: <em>*</em></label></td>	
-				<td><input type="password" name="MotDePasse" required tabindex="7" /> </td>
-				
-				<td><label>Confirmez votre mot de passe: <em>*</em></label></td>	
-				<td><input type="password" name="ConfMotDePasse" required tabindex="8" /> </td>
-			
-			</tr>	
 		
-		</table>
+				<input type="text"  maxlength="30" placeholder="Nom*" required = "" autofocus=""/ >
+				<input type="text"  maxlength="30" placeholder="Prenom*" required>
+				<input type="text"  maxlength="100" placeholder="Adresse"tabindex="3">
+				<input type="tel"  maxlength="10" placeholder="n° de telephone" tabindex="4"/>
+				<input type="email"  maxlength="100" placeholder = "e-mail*"required />
+				<input type="text"  placeholder="Pseudo*"required />
+				<input type="password"  placeholder="Mot de passe*"required  />
+				<input type="password"  placeholder="Conf Mot de passe*"required  />
+			
 					<label>Souhaitez vous devenir premium ?</label>
 					<input type="checkbox" name="prem" value="coche"><br>		
 					<input type="submit" name="Validation" value="Validez" /> 
@@ -79,7 +48,7 @@
 	</form>
 
 </div>
-
+Les champs avec une <em>*</em> sont des champs obligatoires, Merci de les remplir</p>
 
 
 

@@ -3,43 +3,35 @@
 <head>
 	<title>Page de connexion</title>
 	<link rel="stylesheet" type="text/css" href="CSS/menu.css">
+	<link rel="stylesheet" type="text/css" href="CSS/form_connexion.css">
 </head>
 <body>
 	
 <nav>
       <ul>
         <li><a href="index.html#Pageprincipale">Accueil</a></li>
-        <li><a href="#">Voyages</a></li>
-        <li><a href="#">Hotel</a></li>
-        <li><a href="#">Activite</a></li>
       </ul>
 </nav>
 
 
 
 	<H1> Bienvenue sur la page de connexion</H1>
-	<p>Veuillez rentrez vos donnees personnelles</p>
 
 
 
 
 
+<div class ="wrap">
+<h2>Connexion</h2>
 <form action="connexion.php" method="post">
 
-	<table >
+
+<form>
 	
-		<tr>
-			<td><label>Pseudo:</label></td>	
-			<td><input type="text" name="Pseudo" required /> </td>
-		</tr>	
-		<tr>
-			<td><label>Mot de passe:</label></td>	
-			<td><input type="password" name="MotDePasse" required /> </td>
-		</tr>	
-	
-	</table>
-				<input type="submit" name="Validation" value="Validez" /> 
-				<input type="reset" name="Reset" value="Annulez" />
+	<input type ="text" placeholder ="Pseudo" required>
+	<input type ="text" placeholder ="MotDePasse" required>
+	<input type="submit" name="Validation" value="Validez" /> 
+	<input type="reset" name="Reset" value="Annulez" />
 </form>
 
 
